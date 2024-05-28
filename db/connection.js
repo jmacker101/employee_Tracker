@@ -5,7 +5,7 @@ const pool = new Pool({
   user: "postgres",
   password: "rootroot", // TODO- Change this to your own password
   database: "employees",
-  port: 5432, // Default PostgreSQL port
+  port: 3001, // Default PostgreSQL port
 });
 
 module.exports = pool;

@@ -16,14 +16,23 @@ function init() {
 function loadMainPrompts() {
   prompt([
     // TODO- Create first question user will see- "What would you like to do?"
-  ]).then((res) => {
+  ])
+  .then((res) => {
+    const logoText = prompt("what would you like to do?")
     // TODO- Create a variable to store the user's choice
+    const usersChoice = document.querySelector("userchoice");
+   
+    
+    usersChoice = () => {
+      const name = prompt("What is your name?");
+      alert(`Hello ${logoText}}, nice to see you!`);
+      // headingA.textContent = `Welcome ${name}`; is this needed?
+  }})};
     // TODO- Create a switch statement to call the appropriate function depending on what the user chose
-  });
-}
+  
 
 // TODO- Create a function to View all employees
-function viewEmployees() {}
+function viewEmployees() { }
 
 // BONUS- Create a function to View all employees that belong to a department
 
