@@ -17,18 +17,57 @@ function loadMainPrompts() {
   prompt([
     // TODO- Create first question user will see- "What would you like to do?"
   ])
-  .then((res) => {
-    const logoText = prompt("what would you like to do?")
-    // TODO- Create a variable to store the user's choice
-    const usersChoice = document.querySelector("userchoice");
-   
-    
-    usersChoice = () => {
-      const name = prompt("What is your name?");
-      alert(`Hello ${logoText}}, nice to see you!`);
-      // headingA.textContent = `Welcome ${name}`; is this needed?
-  }})};
-    // TODO- Create a switch statement to call the appropriate function depending on what the user chose
+    .then((res) => {
+      const logoText = prompt("what would you like to do?")
+      // TODO- Create a variable to store the user's choice
+      const usersChoice = document.querySelector("userchoice");
+
+
+      usersChoice = () => {
+        const name = prompt("What is your name?");
+        alert(`Hello ${logoText}}, nice to see you!`);
+        // headingA.textContent = `Welcome ${name}`; is this needed?
+      }
+    })
+};
+// TODO- Create a switch statement to call the appropriate function depending on what the user chose
+function handleUserChoice(choice) {
+  switch (choice) {
+    case 'employee':
+      function Employee();
+      // why?
+      break;
+    case 'role':
+      role();
+      break;
+    case 'department':
+      department();
+      break;
+    default:
+      console.log('Invalid choice');
+  }
+}
+
+function Employee() {
+  // why on line 37?
+  console.log('first name?');
+}
+
+function role() {
+  console.log('what is your role?');
+}
+
+function department() {
+  console.log('what is your department?');
+}
+
+// my usage
+handleUserChoice(); // to remind me to call function
+  
+  
+  
+
+
   
 
 // TODO- Create a function to View all employees

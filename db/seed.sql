@@ -20,7 +20,7 @@ VALUES
     ('Director of Parks and Rec', 100000, 1),
         ('Deputy Director of Parks and Rec', 90000, 1),
         ('Chief of Police', 100000, 2),
-        ('Fire Chief', 100000, 3),
+        ('Fire Chief', 100000, 3),\
         ('Director of Sewage', 100000, 4),
         ('Library Director', 100000, 5),
         ('Library Deputy Director', 90000, 5),
