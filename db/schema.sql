@@ -6,33 +6,31 @@ CREATE DATABASE employees;
 
 -- Connect to the database
 \c employees
-
 -- TODO- write an SQL command to Create the department table
-CREATE TABLE department (
-department_id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
-  
-);
+CREATE TABLE
+  department (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(225) UNIQUE NOT NULL
+  );
 
 -- TODO- write an SQL command to Create the role table
-CREATE TABLE role (
-role_id SERIAL PRIMARY KEY
-  title VARCHAR(255),
-  salary VARCHAR(255),
-department_id 
-  FOREIGN KEY (department_id)
-  REFERENCES department(department_id)
-);
--- TODO- write an SQL command to Create the employee table
+CREATE TABLE
+  role (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(225) UNIQUE NOT NULL,
+    salary DECIMAL NOT NULL,
+    department_id INTEGER NOT NULL,
+    CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE
+  );
 
-CREATE TABLE employees (
-employees_id SERIAL PRIMARY KEY,
-first_name VARCHAR(255),
-last_name VARCHAR(255), 
-role_id INTEGER,
- FOREIGN KEY (role_id),
-  REFERENCES role(role_id),
-manager_id INTEGER,
-FOREIGN KEY (employees_id),
-  REFERENCES employees(employees_id),
-);
+-- TODO- write an SQL command to Create the employee table
+CREATE TABLE
+  employee (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(225) NOT NULL,
+    last_name VARCHAR(225),
+    role_id INTEGER NOT NULL,
+    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE CASCADE,
+    manager_id INTEGER,
+    CONSTRAINT fk_manger FOREIGN KEY (manager_id) REFERENCES employee (id) ON DELETE SET NULL
+  ); 

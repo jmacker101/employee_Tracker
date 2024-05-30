@@ -34,8 +34,8 @@ function loadMainPrompts() {
 function handleUserChoice(choice) {
   switch (choice) {
     case 'employee':
-      function Employee();
-      // why?
+     Employee();
+      
       break;
     case 'role':
       role();
@@ -49,15 +49,18 @@ function handleUserChoice(choice) {
 }
 
 function Employee() {
-  // why on line 37?
+  // import and call find all employee functions
   console.log('first name?');
+  //
 }
 
 function role() {
+  // import and call find roles functions
   console.log('what is your role?');
 }
 
 function department() {
+  // import and call find all department
   console.log('what is your department?');
 }
 

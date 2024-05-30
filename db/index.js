@@ -17,6 +17,7 @@ class DB {
   findAllEmployees() {
     return this.query();
   }
+  
 
   // TODO- Create a query to Find all employees except the given employee id
 
