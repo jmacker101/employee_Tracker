@@ -1,7 +1,8 @@
 const { prompt } = require("inquirer");
 const logo = require("asciiart-logo");
 const db = require("./db");
-
+const Employee = require('./db');
+const inquirer = require('inquirer');
 init();
 
 // Display logo text, load main prompts
@@ -50,19 +51,81 @@ function handleUserChoice(choice) {
 
 function Employee() {
   // import and call find all employee functions
+  Employee(); {
+    inquirer.prompt({
+      type: 'list',
+      message: 'What would you like to do?',
+      choices: ['Find all employees', 'Add employee', 'Update employee role', 'Exit'],
+      name: 'action',
+    }).then((answer) => {
+      switch (answer.action) {
+        case 'Find all employees':
+          findAllEmployees();
+          break;
+        // Additional cases for other actions can be added here
+        default:
+          connection.end();
+          break;
+      }
+    });
+  }
   console.log('first name?');
-  //
+  
 }
+promptUser();
 
 function role() {
   // import and call find roles functions
-  console.log('what is your role?');
+  // File: roles.js
+  console.log('Finding roles...');
 }
+
+// Export the function
+// is this the right 
+module.exports = findRoles;
+  console.log('what is your role?');
+
+// File: roles.js
+// Import the findRoles function
+const findRoles = require('./roles.js');
+
+// Define the role function
+function role() {
+    // Call the roles function
+    findRoles();
+    console.log('What is your role?');
+}
+
+// Call the role function
+role();
 
 function department() {
   // import and call find all department
+  // File: department.js
+function findAll() {
+  console.log('Finding all department codes...');
+}
+
+// Export the function
+// what do i do with the export finAll? do i get rid of it or do i move it to combine it?
+module.exports = findAll;
   console.log('what is your department?');
 }
+// File: department.js
+// Import the findAll function
+const findAll = require('./department.js');
+
+// Define the role function
+function role() {
+    // Call the findAll function
+    findAll();
+    console.log('What is your role?');
+}
+
+// Call the role function
+role();
+
+module.exports = { viewAllEmployees, viewAllDepartment, viewAllRole}
 
 // my usage
 handleUserChoice(); // to remind me to call function

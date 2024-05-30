@@ -14,7 +14,7 @@ const departments = [
     { name: 'Sales', value: 'Sales' },
     { name: 'Legal', value: 'Legal' }
 ];
-onst promptUser = () => {
+const promptUser = () => {
     inquirer
     .prompt = {
         type: "list",
